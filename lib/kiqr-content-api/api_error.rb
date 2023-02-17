@@ -10,7 +10,7 @@ OpenAPI Generator version: 6.1.0
 
 =end
 
-module KIQR
+module Kiqr::Content
   class ApiError < StandardError
     attr_reader :code, :response_headers, :response_body
 

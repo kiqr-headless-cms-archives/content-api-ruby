@@ -10,7 +10,7 @@ OpenAPI Generator version: 6.1.0
 
 =end
 
-module KIQR
+module Kiqr::Content
   class Configuration
     # Defines url scheme
     attr_accessor :scheme

@@ -1,4 +1,4 @@
-# KIQR::DocumentsCollection
+# Kiqr::Content::DocumentsCollection
 
 ## Properties
 
@@ -12,7 +12,7 @@
 ```ruby
 require 'kiqr-content-api'
 
-instance = KIQR::DocumentsCollection.new(
+instance = Kiqr::Content::DocumentsCollection.new(
   documents: null,
   meta: null
 )

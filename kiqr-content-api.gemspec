@@ -17,7 +17,7 @@ require "kiqr-content-api/version"
 
 Gem::Specification.new do |s|
   s.name        = "kiqr-content-api"
-  s.version     = KIQR::VERSION
+  s.version     = Kiqr::Content::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["OpenAPI-Generator"]
   s.email       = [""]

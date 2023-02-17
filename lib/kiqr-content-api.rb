@@ -17,18 +17,18 @@ require 'kiqr-content-api/version'
 require 'kiqr-content-api/configuration'
 
 # Models
-KIQR.autoload :Document, 'kiqr-content-api/models/document'
-KIQR.autoload :DocumentsCollection, 'kiqr-content-api/models/documents_collection'
-KIQR.autoload :DocumentsCollectionMeta, 'kiqr-content-api/models/documents_collection_meta'
-KIQR.autoload :PaginationMeta, 'kiqr-content-api/models/pagination_meta'
+Kiqr::Content.autoload :Document, 'kiqr-content-api/models/document'
+Kiqr::Content.autoload :DocumentsCollection, 'kiqr-content-api/models/documents_collection'
+Kiqr::Content.autoload :DocumentsCollectionMeta, 'kiqr-content-api/models/documents_collection_meta'
+Kiqr::Content.autoload :PaginationMeta, 'kiqr-content-api/models/pagination_meta'
 
 # APIs
-KIQR.autoload :DocumentsApi, 'kiqr-content-api/api/documents_api'
+Kiqr::Content.autoload :DocumentsApi, 'kiqr-content-api/api/documents_api'
 
-module KIQR
+module Kiqr::Content
   class << self
     # Customize default settings for the SDK using block.
-    #   KIQR.configure do |config|
+    #   Kiqr::Content.configure do |config|
     #     config.username = "xxx"
     #     config.password = "xxx"
     #   end

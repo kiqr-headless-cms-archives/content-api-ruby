@@ -10,6 +10,6 @@ OpenAPI Generator version: 6.1.0
 
 =end
 
-module KIQR
+module Kiqr::Content
   VERSION = '1.0.0'
 end

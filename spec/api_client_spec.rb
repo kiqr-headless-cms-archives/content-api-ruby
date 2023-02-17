@@ -12,51 +12,51 @@ OpenAPI Generator version: 6.1.0
 
 require 'spec_helper'
 
-describe KIQR::ApiClient do
+describe Kiqr::Content::ApiClient do
   context 'initialization' do
     context 'URL stuff' do
       context 'host' do
         it 'removes http from host' do
-          KIQR.configure { |c| c.host = 'http://example.com' }
-          expect(KIQR::Configuration.default.host).to eq('example.com')
+          Kiqr::Content.configure { |c| c.host = 'http://example.com' }
+          expect(Kiqr::Content::Configuration.default.host).to eq('example.com')
         end
 
         it 'removes https from host' do
-          KIQR.configure { |c| c.host = 'https://wookiee.com' }
-          expect(KIQR::ApiClient.default.config.host).to eq('wookiee.com')
+          Kiqr::Content.configure { |c| c.host = 'https://wookiee.com' }
+          expect(Kiqr::Content::ApiClient.default.config.host).to eq('wookiee.com')
         end
 
         it 'removes trailing path from host' do
-          KIQR.configure { |c| c.host = 'hobo.com/v4' }
-          expect(KIQR::Configuration.default.host).to eq('hobo.com')
+          Kiqr::Content.configure { |c| c.host = 'hobo.com/v4' }
+          expect(Kiqr::Content::Configuration.default.host).to eq('hobo.com')
         end
       end
 
       context 'base_path' do
         it "prepends a slash to base_path" do
-          KIQR.configure { |c| c.base_path = 'v4/dog' }
-          expect(KIQR::Configuration.default.base_path).to eq('/v4/dog')
+          Kiqr::Content.configure { |c| c.base_path = 'v4/dog' }
+          expect(Kiqr::Content::Configuration.default.base_path).to eq('/v4/dog')
         end
 
         it "doesn't prepend a slash if one is already there" do
-          KIQR.configure { |c| c.base_path = '/v4/dog' }
-          expect(KIQR::Configuration.default.base_path).to eq('/v4/dog')
+          Kiqr::Content.configure { |c| c.base_path = '/v4/dog' }
+          expect(Kiqr::Content::Configuration.default.base_path).to eq('/v4/dog')
         end
 
         it "ends up as a blank string if nil" do
-          KIQR.configure { |c| c.base_path = nil }
-          expect(KIQR::Configuration.default.base_path).to eq('')
+          Kiqr::Content.configure { |c| c.base_path = nil }
+          expect(Kiqr::Content::Configuration.default.base_path).to eq('')
         end
       end
     end
   end
 
   describe 'params_encoding in #build_request' do
-    let(:config) { KIQR::Configuration.new }
-    let(:api_client) { KIQR::ApiClient.new(config) }
+    let(:config) { Kiqr::Content::Configuration.new }
+    let(:api_client) { Kiqr::Content::ApiClient.new(config) }
 
     it 'defaults to nil' do
-      expect(KIQR::Configuration.default.params_encoding).to eq(nil)
+      expect(Kiqr::Content::Configuration.default.params_encoding).to eq(nil)
       expect(config.params_encoding).to eq(nil)
 
       request = api_client.build_request(:get, '/test')
@@ -71,11 +71,11 @@ describe KIQR::ApiClient do
   end
 
   describe 'timeout in #build_request' do
-    let(:config) { KIQR::Configuration.new }
-    let(:api_client) { KIQR::ApiClient.new(config) }
+    let(:config) { Kiqr::Content::Configuration.new }
+    let(:api_client) { Kiqr::Content::ApiClient.new(config) }
 
     it 'defaults to 0' do
-      expect(KIQR::Configuration.default.timeout).to eq(0)
+      expect(Kiqr::Content::Configuration.default.timeout).to eq(0)
       expect(config.timeout).to eq(0)
 
       request = api_client.build_request(:get, '/test')
@@ -91,7 +91,7 @@ describe KIQR::ApiClient do
 
   describe '#deserialize' do
     it "handles Array<Integer>" do
-      api_client = KIQR::ApiClient.new
+      api_client = Kiqr::Content::ApiClient.new
       headers = { 'Content-Type' => 'application/json' }
       response = double('response', headers: headers, body: '[12, 34]')
       data = api_client.deserialize(response, 'Array<Integer>')
@@ -100,7 +100,7 @@ describe KIQR::ApiClient do
     end
 
     it 'handles Array<Array<Integer>>' do
-      api_client = KIQR::ApiClient.new
+      api_client = Kiqr::Content::ApiClient.new
       headers = { 'Content-Type' => 'application/json' }
       response = double('response', headers: headers, body: '[[12, 34], [56]]')
       data = api_client.deserialize(response, 'Array<Array<Integer>>')
@@ -109,7 +109,7 @@ describe KIQR::ApiClient do
     end
 
     it 'handles Hash<String, String>' do
-      api_client = KIQR::ApiClient.new
+      api_client = Kiqr::Content::ApiClient.new
       headers = { 'Content-Type' => 'application/json' }
       response = double('response', headers: headers, body: '{"message": "Hello"}')
       data = api_client.deserialize(response, 'Hash<String, String>')
@@ -121,8 +121,8 @@ describe KIQR::ApiClient do
   describe "#object_to_hash" do
     it 'ignores nils and includes empty arrays' do
       # uncomment below to test object_to_hash for model
-      # api_client = KIQR::ApiClient.new
-      # _model = KIQR::ModelName.new
+      # api_client = Kiqr::Content::ApiClient.new
+      # _model = Kiqr::Content::ModelName.new
       # update the model attribute below
       # _model.id = 1
       # update the expected value (hash) below
@@ -133,7 +133,7 @@ describe KIQR::ApiClient do
 
   describe '#build_collection_param' do
     let(:param) { ['aa', 'bb', 'cc'] }
-    let(:api_client) { KIQR::ApiClient.new }
+    let(:api_client) { Kiqr::Content::ApiClient.new }
 
     it 'works for csv' do
       expect(api_client.build_collection_param(param, :csv)).to eq('aa,bb,cc')
@@ -161,7 +161,7 @@ describe KIQR::ApiClient do
   end
 
   describe '#json_mime?' do
-    let(:api_client) { KIQR::ApiClient.new }
+    let(:api_client) { Kiqr::Content::ApiClient.new }
 
     it 'works' do
       expect(api_client.json_mime?(nil)).to eq false
@@ -178,7 +178,7 @@ describe KIQR::ApiClient do
   end
 
   describe '#select_header_accept' do
-    let(:api_client) { KIQR::ApiClient.new }
+    let(:api_client) { Kiqr::Content::ApiClient.new }
 
     it 'works' do
       expect(api_client.select_header_accept(nil)).to be_nil
@@ -194,7 +194,7 @@ describe KIQR::ApiClient do
   end
 
   describe '#select_header_content_type' do
-    let(:api_client) { KIQR::ApiClient.new }
+    let(:api_client) { Kiqr::Content::ApiClient.new }
 
     it 'works' do
       expect(api_client.select_header_content_type(nil)).to be_nil
@@ -209,7 +209,7 @@ describe KIQR::ApiClient do
   end
 
   describe '#sanitize_filename' do
-    let(:api_client) { KIQR::ApiClient.new }
+    let(:api_client) { Kiqr::Content::ApiClient.new }
 
     it 'works' do
       expect(api_client.sanitize_filename('sun')).to eq('sun')

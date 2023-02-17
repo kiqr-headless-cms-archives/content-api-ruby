@@ -1,4 +1,4 @@
-# KIQR::DocumentsApi
+# Kiqr::Content::DocumentsApi
 
 All URIs are relative to *https://content.kiqr.cloud/v1*
 
@@ -20,14 +20,14 @@ Returns a document
 require 'time'
 require 'kiqr-content-api'
 # setup authorization
-KIQR.configure do |config|
+Kiqr::Content.configure do |config|
   # Configure API key authorization: environmentId
   config.api_key['environmentId'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['environmentId'] = 'Bearer'
 end
 
-api_instance = KIQR::DocumentsApi.new
+api_instance = Kiqr::Content::DocumentsApi.new
 content_type_slug = 'posts' # String | 
 document_slug = 'doc_LMxzy1KnBRQKxFyZ0aGNdqp5' # String | 
 
@@ -35,7 +35,7 @@ begin
   # Returns a document
   result = api_instance.get_document(content_type_slug, document_slug)
   p result
-rescue KIQR::ApiError => e
+rescue Kiqr::Content::ApiError => e
   puts "Error when calling DocumentsApi->get_document: #{e}"
 end
 ```
@@ -53,7 +53,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Document>
-rescue KIQR::ApiError => e
+rescue Kiqr::Content::ApiError => e
   puts "Error when calling DocumentsApi->get_document_with_http_info: #{e}"
 end
 ```
@@ -91,21 +91,21 @@ Returns documents by content type
 require 'time'
 require 'kiqr-content-api'
 # setup authorization
-KIQR.configure do |config|
+Kiqr::Content.configure do |config|
   # Configure API key authorization: environmentId
   config.api_key['environmentId'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['environmentId'] = 'Bearer'
 end
 
-api_instance = KIQR::DocumentsApi.new
+api_instance = Kiqr::Content::DocumentsApi.new
 content_type_slug = 'posts' # String | 
 
 begin
   # Returns documents by content type
   result = api_instance.get_documents(content_type_slug)
   p result
-rescue KIQR::ApiError => e
+rescue Kiqr::Content::ApiError => e
   puts "Error when calling DocumentsApi->get_documents: #{e}"
 end
 ```
@@ -123,7 +123,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DocumentsCollection>
-rescue KIQR::ApiError => e
+rescue Kiqr::Content::ApiError => e
   puts "Error when calling DocumentsApi->get_documents_with_http_info: #{e}"
 end
 ```

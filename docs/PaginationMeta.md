@@ -1,4 +1,4 @@
-# KIQR::PaginationMeta
+# Kiqr::Content::PaginationMeta
 
 ## Properties
 
@@ -16,7 +16,7 @@
 ```ruby
 require 'kiqr-content-api'
 
-instance = KIQR::PaginationMeta.new(
+instance = Kiqr::Content::PaginationMeta.new(
   count: 26,
   page: 1,
   items: 20,

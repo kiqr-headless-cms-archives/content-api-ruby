@@ -12,7 +12,7 @@ OpenAPI Generator version: 6.1.0
 
 require 'cgi'
 
-module KIQR
+module Kiqr::Content
   class DocumentsApi
     attr_accessor :api_client
 

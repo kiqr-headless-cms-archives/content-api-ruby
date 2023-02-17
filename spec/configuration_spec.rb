@@ -12,14 +12,14 @@ OpenAPI Generator version: 6.1.0
 
 require 'spec_helper'
 
-describe KIQR::Configuration do
-  let(:config) { KIQR::Configuration.default }
+describe Kiqr::Content::Configuration do
+  let(:config) { Kiqr::Content::Configuration.default }
 
   before(:each) do
     # uncomment below to setup host and base_path
     # require 'URI'
     # uri = URI.parse("https://content.kiqr.cloud/v1")
-    # KIQR.configure do |c|
+    # Kiqr::Content.configure do |c|
     #   c.host = uri.host
     #   c.base_path = uri.path
     # end
