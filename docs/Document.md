@@ -1,4 +1,4 @@
-# Kiqr::Content::Document
+# Kiqr::ContentApi::Document
 
 ## Properties
 
@@ -17,7 +17,7 @@
 ```ruby
 require 'kiqr-content-api'
 
-instance = Kiqr::Content::Document.new(
+instance = Kiqr::ContentApi::Document.new(
   id: doc_LMxzy1KnBRQKxFyZ0aGNdqp5,
   name: My first post,
   slug: my-first-post,

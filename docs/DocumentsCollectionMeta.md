@@ -1,4 +1,4 @@
-# Kiqr::Content::DocumentsCollectionMeta
+# Kiqr::ContentApi::DocumentsCollectionMeta
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'kiqr-content-api'
 
-instance = Kiqr::Content::DocumentsCollectionMeta.new(
+instance = Kiqr::ContentApi::DocumentsCollectionMeta.new(
   pagination: null
 )
 ```

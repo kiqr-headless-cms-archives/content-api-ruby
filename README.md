@@ -1,6 +1,6 @@
 # kiqr-content-api
 
-Kiqr::Content - the Ruby gem for the Content API
+Kiqr::ContentApi - the Ruby gem for the Content API
 
 Content API for KIQR Headless CMS
 
@@ -57,14 +57,14 @@ Please follow the [installation](#installation) procedure and then run the follo
 require 'kiqr-content-api'
 
 # Setup authorization
-Kiqr::Content.configure do |config|
+Kiqr::ContentApi.configure do |config|
   # Configure API key authorization: environmentId
   config.api_key['environmentId'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['environmentId'] = 'Bearer'
 end
 
-api_instance = Kiqr::Content::DocumentsApi.new
+api_instance = Kiqr::ContentApi::DocumentsApi.new
 content_type_slug = 'posts' # String | 
 document_slug = 'doc_LMxzy1KnBRQKxFyZ0aGNdqp5' # String | 
 
@@ -72,7 +72,7 @@ begin
   #Returns a document
   result = api_instance.get_document(content_type_slug, document_slug)
   p result
-rescue Kiqr::Content::ApiError => e
+rescue Kiqr::ContentApi::ApiError => e
   puts "Exception when calling DocumentsApi->get_document: #{e}"
 end
 
@@ -84,16 +84,16 @@ All URIs are relative to *https://content.kiqr.cloud/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*Kiqr::Content::DocumentsApi* | [**get_document**](docs/DocumentsApi.md#get_document) | **GET** /{content_type_slug}/{document_slug} | Returns a document
-*Kiqr::Content::DocumentsApi* | [**get_documents**](docs/DocumentsApi.md#get_documents) | **GET** /{content_type_slug}/ | Returns documents by content type
+*Kiqr::ContentApi::DocumentsApi* | [**get_document**](docs/DocumentsApi.md#get_document) | **GET** /{content_type_slug}/{document_slug} | Returns a document
+*Kiqr::ContentApi::DocumentsApi* | [**get_documents**](docs/DocumentsApi.md#get_documents) | **GET** /{content_type_slug}/ | Returns documents by content type
 
 
 ## Documentation for Models
 
- - [Kiqr::Content::Document](docs/Document.md)
- - [Kiqr::Content::DocumentsCollection](docs/DocumentsCollection.md)
- - [Kiqr::Content::DocumentsCollectionMeta](docs/DocumentsCollectionMeta.md)
- - [Kiqr::Content::PaginationMeta](docs/PaginationMeta.md)
+ - [Kiqr::ContentApi::Document](docs/Document.md)
+ - [Kiqr::ContentApi::DocumentsCollection](docs/DocumentsCollection.md)
+ - [Kiqr::ContentApi::DocumentsCollectionMeta](docs/DocumentsCollectionMeta.md)
+ - [Kiqr::ContentApi::PaginationMeta](docs/PaginationMeta.md)
 
 
 ## Documentation for Authorization
