@@ -7,6 +7,7 @@
 | **id** | **String** |  |  |
 | **name** | **String** |  |  |
 | **slug** | **String** |  |  |
+| **content_type** | **String** |  |  |
 | **content** | **Hash&lt;String, String&gt;** |  |  |
 | **relations** | **Hash&lt;String, Object&gt;** |  | [optional] |
 | **updated_at** | **Time** |  |  |
@@ -21,6 +22,7 @@ instance = Kiqr::ContentApi::Document.new(
   id: doc_LMxzy1KnBRQKxFyZ0aGNdqp5,
   name: My first post,
   slug: my-first-post,
+  content_type: posts,
   content: null,
   relations: null,
   updated_at: null,

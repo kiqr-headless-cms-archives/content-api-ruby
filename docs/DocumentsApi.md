@@ -4,13 +4,13 @@ All URIs are relative to *https://content.kiqr.cloud/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**get_document**](DocumentsApi.md#get_document) | **GET** /{content_type_slug}/{document_slug} | Returns a document |
-| [**get_documents**](DocumentsApi.md#get_documents) | **GET** /{content_type_slug}/ | Returns documents by content type |
+| [**get_document**](DocumentsApi.md#get_document) | **GET** /{contentTypeId}/{documentSlug} | Returns a document |
+| [**get_documents**](DocumentsApi.md#get_documents) | **GET** /{contentTypeId}/ | Returns documents by content type |
 
 
 ## get_document
 
-> <Document> get_document(content_type_slug, document_slug)
+> <Document> get_document(content_type_id, document_slug)
 
 Returns a document
 
@@ -28,12 +28,12 @@ Kiqr::ContentApi.configure do |config|
 end
 
 api_instance = Kiqr::ContentApi::DocumentsApi.new
-content_type_slug = 'posts' # String | 
+content_type_id = 'posts' # String | 
 document_slug = 'doc_LMxzy1KnBRQKxFyZ0aGNdqp5' # String | 
 
 begin
   # Returns a document
-  result = api_instance.get_document(content_type_slug, document_slug)
+  result = api_instance.get_document(content_type_id, document_slug)
   p result
 rescue Kiqr::ContentApi::ApiError => e
   puts "Error when calling DocumentsApi->get_document: #{e}"
@@ -44,12 +44,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Document>, Integer, Hash)> get_document_with_http_info(content_type_slug, document_slug)
+> <Array(<Document>, Integer, Hash)> get_document_with_http_info(content_type_id, document_slug)
 
 ```ruby
 begin
   # Returns a document
-  data, status_code, headers = api_instance.get_document_with_http_info(content_type_slug, document_slug)
+  data, status_code, headers = api_instance.get_document_with_http_info(content_type_id, document_slug)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Document>
@@ -62,7 +62,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **content_type_slug** | **String** |  |  |
+| **content_type_id** | **String** |  |  |
 | **document_slug** | **String** |  |  |
 
 ### Return type
@@ -81,7 +81,7 @@ end
 
 ## get_documents
 
-> <DocumentsCollection> get_documents(content_type_slug)
+> <DocumentsCollection> get_documents(content_type_id)
 
 Returns documents by content type
 
@@ -99,11 +99,11 @@ Kiqr::ContentApi.configure do |config|
 end
 
 api_instance = Kiqr::ContentApi::DocumentsApi.new
-content_type_slug = 'posts' # String | 
+content_type_id = 'posts' # String | 
 
 begin
   # Returns documents by content type
-  result = api_instance.get_documents(content_type_slug)
+  result = api_instance.get_documents(content_type_id)
   p result
 rescue Kiqr::ContentApi::ApiError => e
   puts "Error when calling DocumentsApi->get_documents: #{e}"
@@ -114,12 +114,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DocumentsCollection>, Integer, Hash)> get_documents_with_http_info(content_type_slug)
+> <Array(<DocumentsCollection>, Integer, Hash)> get_documents_with_http_info(content_type_id)
 
 ```ruby
 begin
   # Returns documents by content type
-  data, status_code, headers = api_instance.get_documents_with_http_info(content_type_slug)
+  data, status_code, headers = api_instance.get_documents_with_http_info(content_type_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DocumentsCollection>
@@ -132,7 +132,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **content_type_slug** | **String** |  |  |
+| **content_type_id** | **String** |  |  |
 
 ### Return type
 
