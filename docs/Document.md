@@ -25,7 +25,7 @@ instance = Kiqr::ContentApi::Document.new(
   content_type: posts,
   content: null,
   relations: null,
-  updated_at: null,
+  updated_at: 2023-02-13T18:57:03Z,
   created_at: 2023-01-17T09:36:08Z
 )
 ```
