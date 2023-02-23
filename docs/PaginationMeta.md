@@ -18,7 +18,7 @@ require 'kiqr-content-api'
 
 instance = Kiqr::ContentApi::PaginationMeta.new(
   count: 26,
-  page: 1,
+  page: 2,
   items: 20,
   pages: 2,
   from: 21,

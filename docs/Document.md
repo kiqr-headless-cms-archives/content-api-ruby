@@ -8,8 +8,8 @@
 | **name** | **String** |  |  |
 | **slug** | **String** |  |  |
 | **content_type** | **String** |  |  |
-| **content** | **Hash&lt;String, String&gt;** |  |  |
-| **relations** | **Hash&lt;String, Object&gt;** |  | [optional] |
+| **content** | **Object** |  |  |
+| **relations** | **Object** |  | [optional] |
 | **updated_at** | **Time** |  |  |
 | **created_at** | **Time** |  |  |
 
@@ -19,13 +19,13 @@
 require 'kiqr-content-api'
 
 instance = Kiqr::ContentApi::Document.new(
-  id: doc_LMxzy1KnBRQKxFyZ0aGNdqp5,
+  id: doc_zWNY2gOL1xwrYuRqXQnjJZyP,
   name: My first post,
   slug: my-first-post,
   content_type: posts,
   content: null,
   relations: null,
-  updated_at: 2023-02-13T18:57:03Z,
+  updated_at: 2023-01-17T09:36:08Z,
   created_at: 2023-01-17T09:36:08Z
 )
 ```
