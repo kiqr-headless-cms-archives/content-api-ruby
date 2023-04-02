@@ -11,10 +11,12 @@ docs/DocumentsApi.md
 docs/DocumentsCollection.md
 docs/DocumentsCollectionMeta.md
 docs/PaginationMeta.md
+docs/RelationshipsApi.md
 git_push.sh
 kiqr-content-api.gemspec
 lib/kiqr-content-api.rb
 lib/kiqr-content-api/api/documents_api.rb
+lib/kiqr-content-api/api/relationships_api.rb
 lib/kiqr-content-api/api_client.rb
 lib/kiqr-content-api/api_error.rb
 lib/kiqr-content-api/configuration.rb
@@ -23,6 +25,7 @@ lib/kiqr-content-api/models/documents_collection.rb
 lib/kiqr-content-api/models/documents_collection_meta.rb
 lib/kiqr-content-api/models/pagination_meta.rb
 lib/kiqr-content-api/version.rb
+spec/api/relationships_api_spec.rb
 spec/api_client_spec.rb
 spec/configuration_spec.rb
 spec/spec_helper.rb

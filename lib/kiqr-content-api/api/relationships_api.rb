@@ -13,35 +13,47 @@ OpenAPI Generator version: 6.4.0
 require 'cgi'
 
 module Kiqr::ContentApi
-  class DocumentsApi
+  class RelationshipsApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Returns documents by content type
+    # Returns a list of related documents
     # @param content_type_id [String] 
+    # @param document_id [String] 
+    # @param field_id [String] 
     # @param [Hash] opts the optional parameters
     # @return [DocumentsCollection]
-    def get_documents(content_type_id, opts = {})
-      data, _status_code, _headers = get_documents_with_http_info(content_type_id, opts)
+    def get_relations(content_type_id, document_id, field_id, opts = {})
+      data, _status_code, _headers = get_relations_with_http_info(content_type_id, document_id, field_id, opts)
       data
     end
 
-    # Returns documents by content type
+    # Returns a list of related documents
     # @param content_type_id [String] 
+    # @param document_id [String] 
+    # @param field_id [String] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(DocumentsCollection, Integer, Hash)>] DocumentsCollection data, response status code and response headers
-    def get_documents_with_http_info(content_type_id, opts = {})
+    def get_relations_with_http_info(content_type_id, document_id, field_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DocumentsApi.get_documents ...'
+        @api_client.config.logger.debug 'Calling API: RelationshipsApi.get_relations ...'
       end
       # verify the required parameter 'content_type_id' is set
       if @api_client.config.client_side_validation && content_type_id.nil?
-        fail ArgumentError, "Missing the required parameter 'content_type_id' when calling DocumentsApi.get_documents"
+        fail ArgumentError, "Missing the required parameter 'content_type_id' when calling RelationshipsApi.get_relations"
+      end
+      # verify the required parameter 'document_id' is set
+      if @api_client.config.client_side_validation && document_id.nil?
+        fail ArgumentError, "Missing the required parameter 'document_id' when calling RelationshipsApi.get_relations"
+      end
+      # verify the required parameter 'field_id' is set
+      if @api_client.config.client_side_validation && field_id.nil?
+        fail ArgumentError, "Missing the required parameter 'field_id' when calling RelationshipsApi.get_relations"
       end
       # resource path
-      local_var_path = '/{contentTypeId}/'.sub('{' + 'contentTypeId' + '}', CGI.escape(content_type_id.to_s))
+      local_var_path = '/{contentTypeId}/{documentId}/relations/{fieldId}'.sub('{' + 'contentTypeId' + '}', CGI.escape(content_type_id.to_s)).sub('{' + 'documentId' + '}', CGI.escape(document_id.to_s)).sub('{' + 'fieldId' + '}', CGI.escape(field_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -64,7 +76,7 @@ module Kiqr::ContentApi
       auth_names = opts[:debug_auth_names] || ['environmentId']
 
       new_options = opts.merge(
-        :operation => :"DocumentsApi.get_documents",
+        :operation => :"RelationshipsApi.get_relations",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -75,7 +87,7 @@ module Kiqr::ContentApi
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DocumentsApi#get_documents\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: RelationshipsApi#get_relations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
